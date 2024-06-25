@@ -1,0 +1,5 @@
+django
+django-allauth[socialaccount]
+requests
+jwt
+python-dotenv
