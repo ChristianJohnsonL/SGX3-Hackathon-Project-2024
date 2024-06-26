@@ -15,7 +15,11 @@
     {% for key, value in result.items %}
         <tr>
             <td width="110">{{ key }}</td>
-            <td>{{ value }}</td>
+            {% if key == "URL" %}
+                <td><a href={{ value }}>{{ value }}</a></td>
+            {% else %}
+                <td>{{ value }}</td>
+            {% endif %}
         </tr>
     {% endfor %}
     </table>
