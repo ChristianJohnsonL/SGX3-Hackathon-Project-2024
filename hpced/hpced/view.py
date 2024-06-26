@@ -33,10 +33,11 @@ def search_form_view(request):
         if form.is_valid():
             ## API ACCESS HERE
             form_data = form.cleaned_data
+            #print(json.dumps(form_data, indent=4))
 
-            query_str = form_data['search_query']
+            query_str = form_data.pop('Search_Query')
 
-            results = queryHPC_ED(query_str, 2, {})
+            results = queryHPC_ED(query_str, 10000, form_data)
             results = json.dumps(results, indent=4)
             print(results)
 

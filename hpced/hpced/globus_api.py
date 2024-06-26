@@ -33,7 +33,7 @@ def queryHPC_ED(search_query: str, limit: int, filters: {str:any}):
 
     params:
     search_query    -> a string representing what to search for in the HPC-ED database/catalog
-    limit           -> an integer representing the maximum number of search results to return
+    limit           -> the maximum number of results to return from the query
     filters         -> a dictionary with filter types as keys and the value to filter for as values
     '''
     # Check if tokens are stored and load them
@@ -89,22 +89,25 @@ def queryHPC_ED(search_query: str, limit: int, filters: {str:any}):
         for filter_str in filters.keys():
             try:
                 val = metadata[filter_str]
+                if type(val) == list:
+                    val = val[0]
             except: # handle bad key error
                 valid_filters = False
                 break
             else:   # no error
-                if val != filters[filter_str]:
+                filter_val = filters[filter_str]
+                if filter_val == []: # No filter applied, so move on
+                    continue
+                if val not in filter_val:
                     valid_filter_value = False
 
         if not valid_filters or not valid_filter_value:
             continue
 
-        filtered_results.append(entry)
-    
-    #for res in filtered_results:
-        #print(json.dumps(res, indent=4))
+        filtered_results.append(metadata)
     
     return filtered_results
 
+# Example queries
 #queryHPC_ED("*", 5, {"Rating":1.8, "Expertise_Level":["Intermediate"]})
 #queryHPC_ED("*", 5, {})
