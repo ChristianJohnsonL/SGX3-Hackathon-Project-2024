@@ -82,6 +82,7 @@ SOCIALACCOUNT_PROVIDERS = {
             'openid',
             'profile',
             'email',
+            'offline_access',
             'urn:globus:auth:scope:transfer.api.globus.org:all'
         ],
     }
