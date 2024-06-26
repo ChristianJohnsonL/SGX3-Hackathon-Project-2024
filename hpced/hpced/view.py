@@ -14,6 +14,7 @@ def index(request):
 
 @login_required
 def metadata_form_view(request):
+    form_data = {}
     if request.method == "POST":
         form = MetadataForm(request.POST)
         if form.is_valid():
@@ -21,10 +22,11 @@ def metadata_form_view(request):
             form_data = form.cleaned_data
             print(dumps(form_data, cls=DjangoJSONEncoder))
             return render(request, "hpced/thanks.html", {"data": form_data})
+            #return render(request, "hpced/metadata.html", {"form": form, "data": form_data})
         
     else:
         form = MetadataForm()
-    return render(request, "hpced/metadata.html", {"form": form})
+    return render(request, "hpced/metadata.html", {"form": form, "data": form_data})
 
 
 def search_form_view(request):
