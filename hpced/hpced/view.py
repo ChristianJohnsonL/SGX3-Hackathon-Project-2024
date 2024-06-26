@@ -3,6 +3,7 @@ from django.shortcuts import render
 
 from .forms import MetadataForm, SearchForm
 from .globus_api import queryHPC_ED
+import json
 
 
 def index(request):
@@ -31,6 +32,7 @@ def search_form_view(request):
             query_str = form_data['search_query']
 
             results = queryHPC_ED(query_str, 2, {})
+            results = json.dumps(results, indent=4)
             print(results)
 
             return HttpResponseRedirect("/thanks/")
