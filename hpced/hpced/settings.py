@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.globus',
+    'django_extensions'
 
 ]
 
@@ -82,7 +83,7 @@ SOCIALACCOUNT_PROVIDERS = {
             'profile',
             'email',
             'urn:globus:auth:scope:transfer.api.globus.org:all'
-        ]
+        ],
     }
 }
 MIDDLEWARE = [
@@ -97,6 +98,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'hpced.urls'
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https'
 
 TEMPLATES = [
     {
