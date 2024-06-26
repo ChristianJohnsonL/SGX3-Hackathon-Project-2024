@@ -1,24 +1,33 @@
 from django import forms
 from django.core.validators import URLValidator
 
+# Refer to the following site for the field names and values from Globus:
+# https://github.com/HPC-ED/HPC-ED.github.io/wiki/Metadata-Description
+
+# ('Sent to python', 'displayed in form')
 EXPERTISE_LEVEL_CHOICES = [
-    ('beginner', 'Beginner'),
-    ('intermediate', 'Intermediate'),
-    ('advanced', 'Advanced'),
-    ('all', 'All'),
+    ('Beginner', 'Beginner'),
+    ('Intermediate', 'Intermediate'),
+    ('Advanced', 'Advanced'),
+    ('All', 'All'),
 ]
 
 TARGET_GROUP_CHOICES = [
-    ('students', 'Students'),
-    ('research_groups', 'Research Groups'),
-    ('publishers', 'Publishers'),
-    ('research_organizations', 'Research Organizations'),
-    ('researchers', 'Researchers'),
-    ('research_managers', 'Research Managers'),
-    ('funders', 'Funders'),
-    ('innovators', 'Innovators'),
-    ('research_networks', 'Research Networks'),
-    ('research_projects', 'Research Projects'),
+    ('Researchers', 'Researchers'),
+    ('Research groups', 'Research Groups'),
+    ('Research communities', 'Research Communities'),
+    ('Research projects', 'Research Projects'),
+    ('Research networks', 'Research Networks'),
+    ('Research managers', 'Research Managers'),
+    ('Research organizations', 'Research Organizations'),
+    ('Students', 'Students'),
+    ('Innovators', 'Innovators'),
+    ('Providers', 'Providers'),
+    ('Funders', 'Funders'),
+    ('Research Infrastructure Managers', 'Research Infrastructure Managers'),
+    ('Resource Managers', 'Resource Managers'),
+    ('Publishers', 'Publishers'),
+    ('Other', 'Other'),
 ]
 
 OUTCOMES_CHOICES = [
@@ -62,3 +71,10 @@ class MetadataForm(forms.Form):
     duration = forms.IntegerField(label='Duration', min_value=1)
     provider_id = forms.CharField(label='Provider ID', max_length=100)
     rating = forms.DecimalField(label='Rating', max_digits=2, decimal_places=1)
+
+
+class SearchForm(forms.Form):
+    search_query = forms.CharField(label='Search Query', max_length=200)
+    expertise_level = forms.MultipleChoiceField(label='Expertise Level', choices=EXPERTISE_LEVEL_CHOICES, widget=forms.CheckboxSelectMultiple, required=False)
+    learning_outcome = forms.MultipleChoiceField(label='Learning Outcome', choices=OUTCOMES_CHOICES, widget=forms.CheckboxSelectMultiple, required=False)
+    target_group = forms.MultipleChoiceField(label='Target Group', choices=TARGET_GROUP_CHOICES, widget=forms.CheckboxSelectMultiple, required=False)
