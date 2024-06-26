@@ -2,7 +2,7 @@
 
 {% block title %}New Metadata Entry{% endblock %}
 {% block content %}
-<form method="post">
+<form action="/metadata/" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Submit</button>

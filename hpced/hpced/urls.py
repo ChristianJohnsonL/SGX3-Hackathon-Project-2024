@@ -30,8 +30,7 @@ admin.site.login = secure_admin_login(admin.site.login)
 urlpatterns = [
     path('', view.index, name='index'),
     path('admin/', admin.site.urls),
-    path('metadata/', view.metadata_form_view, name='metadata_form'),
+    path('metadata', view.metadata_form_view, name='metadata_form'),
     path('accounts/', include('allauth.urls')),
-    path("admin/", admin.site.urls),
 
 ]
