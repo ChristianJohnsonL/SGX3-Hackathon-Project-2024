@@ -1,8 +1,8 @@
 {% extends "hpced/base.html" %}
 
-{% block title %}New Metadata Entry{% endblock %}
+{% block title %}Search for Training Resources{% endblock %}
 {% block content %}
-<form action="/metadata/" method="post">
+<form action="/search/" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Submit</button>
