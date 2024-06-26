@@ -1,5 +1,4 @@
 import globus_sdk
-from flask import jsonify
 import json
 import os
 
