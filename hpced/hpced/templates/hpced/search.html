@@ -7,4 +7,18 @@
     {{ form.as_p }}
     <button type="submit">Submit</button>
 </form>
+
+<hr>
+<div>
+{% for result in result_list %}
+    <table border="3">
+    {% for key, value in result.items %}
+        <tr>
+            <td width="110">{{ key }}</td>
+            <td>{{ value }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endfor %}
+</div>
 {% endblock %}

@@ -28,6 +28,7 @@ def metadata_form_view(request):
 
 
 def search_form_view(request):
+    results = []
     if request.method == "POST":
         form = SearchForm(request.POST)
         if form.is_valid():
@@ -37,12 +38,11 @@ def search_form_view(request):
 
             query_str = form_data.pop('Search_Query')
 
-            results = queryHPC_ED(query_str, 10000, form_data)
-            results = json.dumps(results, indent=4)
-            print(results)
+            results = queryHPC_ED(query_str, 10, form_data)
 
-            return HttpResponseRedirect("/thanks/")
+            #return HttpResponseRedirect("/search/")
+            return render(request, "hpced/search.html", {"form": form, "result_list": results})
         
     else:
         form = SearchForm()
-    return render(request, "hpced/search.html", {"form": form})
+    return render(request, "hpced/search.html", {"form": form, "result_list": results})
