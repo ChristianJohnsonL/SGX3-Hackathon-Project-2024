@@ -14,6 +14,7 @@ def index(request):
 
 @login_required
 def metadata_form_view(request):
+    form_data = {}
     if request.method == "POST":
         form = MetadataForm(request.POST)
         if form.is_valid():
@@ -21,27 +22,29 @@ def metadata_form_view(request):
             form_data = form.cleaned_data
             print(dumps(form_data, cls=DjangoJSONEncoder))
             return render(request, "hpced/thanks.html", {"data": form_data})
+            #return render(request, "hpced/metadata.html", {"form": form, "data": form_data})
         
     else:
         form = MetadataForm()
-    return render(request, "hpced/metadata.html", {"form": form})
+    return render(request, "hpced/metadata.html", {"form": form, "data": form_data})
 
 
 def search_form_view(request):
+    results = []
     if request.method == "POST":
         form = SearchForm(request.POST)
         if form.is_valid():
             ## API ACCESS HERE
             form_data = form.cleaned_data
+            #print(json.dumps(form_data, indent=4))
 
-            query_str = form_data['search_query']
+            query_str = form_data.pop('Search_Query')
 
-            results = queryHPC_ED(query_str, 2, {})
-            results = json.dumps(results, indent=4)
-            print(results)
+            results = queryHPC_ED(query_str, 10, form_data)
 
-            return HttpResponseRedirect("/thanks/")
+            #return HttpResponseRedirect("/search/")
+            return render(request, "hpced/search.html", {"form": form, "result_list": results})
         
     else:
         form = SearchForm()
-    return render(request, "hpced/search.html", {"form": form})
+    return render(request, "hpced/search.html", {"form": form, "result_list": results})
