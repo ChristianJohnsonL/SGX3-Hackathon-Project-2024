@@ -1,0 +1,11 @@
+{% extends "hpced/base.html" %}
+
+{% block title %}New Metadata Inserted{% endblock %}
+{% block content %}
+This is what would have been inserted, if we had a key that let us insert into globus.
+<ul>
+{% for key, value in data.items %}
+    <li><strong>{{ key }}:</strong> {{ value }}</li>
+{% endfor %}
+</ul>
+{% endblock %}

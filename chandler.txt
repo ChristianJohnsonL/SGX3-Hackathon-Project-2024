@@ -19,6 +19,7 @@ hpced
 
 TO RUN
 1. `cd` into the root of this repository
+2. copy the .env file I provided in slack into the root of this repository
 2. run `python3 -m venv venv`
 3. run `source venv/bin/activate`
 4. run `pip install -r requirements.txt`
