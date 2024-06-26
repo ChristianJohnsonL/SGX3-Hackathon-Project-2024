@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.globus',
+
 ]
 
 SOCIALACCOUNT_LOGIN_ON_GET=True
@@ -60,15 +61,28 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 SOCIALACCOUNT_PROVIDERS = {
-    'google': {
-        # For each OAuth based provider, either add a ``SocialApp``
-        # (``socialaccount`` app) containing the required client
-        # credentials, or list them here:
+    # 'google': {
+    #     # For each OAuth based provider, either add a ``SocialApp``
+    #     # (``socialaccount`` app) containing the required client
+    #     # credentials, or list them here:
+    #     'APP': {
+    #         'client_id': os.getenv("GOOGLE_OAUTH2_CLIENT_ID"),
+    #         'secret': os.getenv("GOOGLE_OAUTH2_CLIENT_SECRET"),
+    #         'key': ''
+    #     }
+    # },
+     'globus': {
         'APP': {
-            'client_id': os.getenv("GOOGLE_OAUTH2_CLIENT_ID"),
-            'secret': os.getenv("GOOGLE_OAUTH2_CLIENT_SECRET"),
-            'key': ''
-        }
+            'client_id': os.getenv("GLOBUS_OAUTH2_CLIENT_ID"),
+            'secret': os.getenv("GLOBUS_OAUTH2_CLIENT_SECRET"),
+            'key': ''        
+        },
+        'SCOPE': [
+            'openid',
+            'profile',
+            'email',
+            'urn:globus:auth:scope:transfer.api.globus.org:all'
+        ]
     }
 }
 MIDDLEWARE = [
