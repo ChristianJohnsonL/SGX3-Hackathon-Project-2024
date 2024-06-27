@@ -12,6 +12,9 @@ from json import dumps
 def index(request):
     return render(request, "hpced/index.html")
 
+def thanks(request):
+    return render(request, "hpced/thanks.html")
+
 @login_required
 def metadata_form_view(request):
     form_data = {}
