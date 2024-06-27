@@ -1,3 +1,6 @@
+# Other #
+globus_tokens.json
+
 # Django #
 *.log
 *.pot
