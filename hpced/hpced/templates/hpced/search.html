@@ -1,5 +1,47 @@
 {% extends "hpced/base.html" %}
 
+{% block style_and_js %}
+<style>
+    .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background-color: #333;
+        color: white;
+    }
+    .top-bar a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+    }
+    .collapsible {
+      background-color: rgba(119, 119, 119, 100);
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      width: 100%;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      margin-top: 10px;
+    }
+
+    .active, .collapsible:hover {
+      background-color: #555;
+    }
+
+    .content {
+      padding: 0 18px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+    }    
+</style>
+
+
+{% endblock %}
+
 {% block title %}Search for Training Resources{% endblock %}
 {% block content %}
 <form action="/search/" method="post">
@@ -11,6 +53,8 @@
 <hr>
 <div>
 {% for result in result_list %}
+    <button class="collapsible">{{ result.Title }}</button>
+    <div class="content">
     <table border="3">
     {% for key, value in result.items %}
         <tr>
@@ -23,6 +67,25 @@
         </tr>
     {% endfor %}
     </table>
+    </div>
 {% endfor %}
 </div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
+</script>
+
 {% endblock %}
