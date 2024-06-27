@@ -4,7 +4,7 @@
 SGX3 ADMI24 Hackathon      
 : View their website [here](https://hackhpc.github.io/sgx3admi24/)
 
-## Team NLC^2
+## Team NLC^2^
 ### Mentor
 **Teniola Oluwaseyitan**       
 Mississippi Valley State University
@@ -21,6 +21,10 @@ Southern Oregon University
 
 **Lisha Ramon**     
 SUNY Oneonta
+
+             |            |  
+:-------------------------:|:-------------------------:|:--------------------
+![](images/hackathon_logo.png)  |  ![](images/team_logo.png) | ![](images/sgx3.png)
 
 ## Project Description
 There are institutions that don't have easy ways to categorize or present their training resources. Currently, HPC-ED utilizes a command-line interface (CLI) to add data (training material) to and query data from a database which is not at all user friendly or intuitive. Many people don't know how to use a CLI, so they don't get the opportunity to use the training resources.
