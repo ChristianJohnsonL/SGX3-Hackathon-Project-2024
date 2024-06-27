@@ -22,7 +22,7 @@ Southern Oregon University
 SUNY Oneonta
 
 |  |  |  | 
-||||
+|-|-|-|
 | ![](images/hackathon_logo.png) | ![](images/team_logo.png) | ![](images/sgx3_logo.png) |
      
 | image1 | image2 | image3 | 
