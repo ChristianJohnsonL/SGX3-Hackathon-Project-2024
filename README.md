@@ -21,14 +21,6 @@ Southern Oregon University
 **Lisha Ramon**     
 SUNY Oneonta
 
-|  |  |  | 
-|-|-|-|
-| ![](images/hackathon_logo.png) | ![](images/team_logo.png) | ![](images/sgx3_logo.png) |
-     
-| image1 | image2 | image3 | 
-|--------|--------|--------|
-| ![](images/hackathon_logo.png) | ![](images/team_logo.png) | ![](images/sgx3_logo.png) |
-
 ## Project Description
 There are institutions that don't have easy ways to categorize or present their training resources. Currently, HPC-ED utilizes a command-line interface (CLI) to add data (training material) to and query data from a database which is not at all user friendly or intuitive. Many people don't know how to use a CLI, so they don't get the opportunity to use the training resources.
 
@@ -36,17 +28,8 @@ Furthermore, most people go to Google for their needs which isn't the best way t
 
 ## How to Run
 1. Clone the repository.   
-Using HTTPS:
 ```
 $ git clone https://github.com/ChristianJohnsonL/SGX3-Hackathon-Project-2024.git
-```
-Using SSH:
-```
-$ git clone git@github.com:ChristianJohnsonL/SGX3-Hackathon-Project-2024.git
-```
-Using GitHub CLI
-```
-$ gh repo clone ChristianJohnsonL/SGX3-Hackathon-Project-2024
 ```
 2. Enter the cloned repo.
 ```
