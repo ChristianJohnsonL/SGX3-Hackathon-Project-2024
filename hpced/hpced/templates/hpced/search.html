@@ -16,15 +16,15 @@
         margin-left: 20px;
     }
     .collapsible {
-      background-color: #777;
+      background-color: rgba(119, 119, 119, 100);
       color: white;
       cursor: pointer;
-      padding: 18px;
+      padding: 15px;
       width: 100%;
-      border: none;
       text-align: left;
       outline: none;
       font-size: 15px;
+      margin-top: 10px;
     }
 
     .active, .collapsible:hover {
@@ -53,7 +53,7 @@
 <hr>
 <div>
 {% for result in result_list %}
-    <button class="collapsible">Open Section {{ result.Title }}</button>
+    <button class="collapsible">{{ result.Title }}</button>
     <div class="content">
     <table border="3">
     {% for key, value in result.items %}
