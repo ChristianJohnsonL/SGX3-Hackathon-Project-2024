@@ -31,7 +31,11 @@ urlpatterns = [
     path('', view.index, name='index'),
     path('admin/', admin.site.urls),
     path('metadata/', view.metadata_form_view, name='metadata_form'),
+    path('thanks/', view.thanks, name='thanks'),
     path('search/', view.search_form_view, name='search_form'),
+
+    path('accounts/globus/login/callback/', view.globus_callback),
+    path('accounts/globus/login/', view.globus_login),
     path('accounts/', include('allauth.urls')),
     path('',view.main)
 
