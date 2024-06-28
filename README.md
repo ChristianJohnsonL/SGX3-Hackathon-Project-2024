@@ -35,7 +35,7 @@ $ git clone https://github.com/ChristianJohnsonL/SGX3-Hackathon-Project-2024.git
 ```
 $ cd SGX3-Hackathon-Project-2024
 ```
-3. Add the `.env` file. **TODO**
+3. Add the `.env` file. Must include Globus client ID, and secret. 
 4. Create a virtual environment.
 ```
 $ python3 -m venv env && source env/bin/activate
@@ -50,9 +50,9 @@ $ python3 manage.py makemigrations && python3 manage.py migrate
 ```
 7. Start the server.
 ```
-$ python3 manage.py runserver
+$ python3 manage.py runserver_plus --key-file selftest-key --cert-file selftest-cert localhost:8443
 ```
-8. View the project website in a browser at `localhost:8000`.
+8. View the project website in a browser at `https://localhost:8000`. HTTPS **must** be used because Globus requires it. Your browser will gripe about a bad cert, this is a symptom of using HTTPS locally, but would not be a problem in an actual deployment. 
 9. Login to the server and begin your research!
 
 ## Repository Structure
