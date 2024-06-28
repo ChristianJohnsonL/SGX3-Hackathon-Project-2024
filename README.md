@@ -50,7 +50,7 @@ $ python3 manage.py makemigrations && python3 manage.py migrate
 ```
 7. Start the server.
 ```
-$ python3 manage.py runserver_plus --key-file selftest-key --cert-file selftest-cert localhost:8443
+$ python3 manage.py runserver_plus --key-file selftest-key --cert-file selftest-cert localhost:8000
 ```
 8. View the project website in a browser at `https://localhost:8000`. HTTPS **must** be used because Globus requires it. Your browser will gripe about a bad cert, this is a symptom of using HTTPS locally, but would not be a problem in an actual deployment. 
 9. Login to the server and begin your research!
