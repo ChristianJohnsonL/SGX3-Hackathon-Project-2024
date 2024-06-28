@@ -74,7 +74,7 @@ class MetadataForm(forms.Form):
 
 
 class SearchForm(forms.Form):
-    search_query = forms.CharField(label='Search Query', max_length=200)
-    expertise_level = forms.MultipleChoiceField(label='Expertise Level', choices=EXPERTISE_LEVEL_CHOICES, widget=forms.CheckboxSelectMultiple, required=False)
-    learning_outcome = forms.MultipleChoiceField(label='Learning Outcome', choices=OUTCOMES_CHOICES, widget=forms.CheckboxSelectMultiple, required=False)
-    target_group = forms.MultipleChoiceField(label='Target Group', choices=TARGET_GROUP_CHOICES, widget=forms.CheckboxSelectMultiple, required=False)
+    Search_Query = forms.CharField(label='Search Query', max_length=200)
+    Expertise_Level = forms.MultipleChoiceField(label='Expertise Level', choices=EXPERTISE_LEVEL_CHOICES, widget=forms.CheckboxSelectMultiple, required=False)
+    Learning_Outcome = forms.MultipleChoiceField(label='Learning Outcome', choices=OUTCOMES_CHOICES, widget=forms.CheckboxSelectMultiple, required=False)
+    Target_Group = forms.MultipleChoiceField(label='Target Group', choices=TARGET_GROUP_CHOICES, widget=forms.CheckboxSelectMultiple, required=False)
