@@ -2,9 +2,15 @@
 
 {% block title %}New Metadata Entry{% endblock %}
 {% block content %}
+{% if not data %}
 <form action="/metadata/" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Submit</button>
 </form>
+{% endif %}
+
+{% if data %}
+<h>Thank you!</h>
+{% endif %}
 {% endblock %}

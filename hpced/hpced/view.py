@@ -100,9 +100,14 @@ def index(request):
     return render(request, "hpced/index.html")
 
 
+def thanks(request):
+    return render(request, "hpced/thanks.html")
+
+
 @login_required
 @globus_token_required
 def metadata_form_view(request):
+    form_data = {}
     if request.method == "POST":
         form = MetadataForm(request.POST)
         if form.is_valid():
@@ -110,10 +115,11 @@ def metadata_form_view(request):
             form_data = form.cleaned_data
             print(dumps(form_data, cls=DjangoJSONEncoder))
             return render(request, "hpced/thanks.html", {"data": form_data})
+            #return render(request, "hpced/metadata.html", {"form": form, "data": form_data})
         
     else:
         form = MetadataForm()
-    return render(request, "hpced/metadata.html", {"form": form})
+    return render(request, "hpced/metadata.html", {"form": form, "data": form_data})
 
 @login_required
 @globus_token_required
@@ -130,6 +136,7 @@ def search_form_view(request):
 
             results = queryHPC_ED(query_str, 20, form_data, access_token=request.access_token)
             pp(results)
+
             return render(request, "hpced/search.html", {"form": form, "result_list": results})
         
     else:

@@ -36,7 +36,7 @@ def queryHPC_ED(search_query: str, limit: int, filters: {str:any}, access_token=
 
     params:
     search_query    -> a string representing what to search for in the HPC-ED database/catalog
-    limit           -> an integer representing the maximum number of search results to return
+    limit           -> the maximum number of results to return from the query
     filters         -> a dictionary with filter types as keys and the value to filter for as values
     '''
     # Check if tokens are stored and load them
@@ -181,5 +181,7 @@ def queryHPC_ED(search_query: str, limit: int, filters: {str:any}, access_token=
     
 #     return filtered_results
 
+
+# Example queries
 #queryHPC_ED("*", 5, {"Rating":1.8, "Expertise_Level":["Intermediate"]})
 #queryHPC_ED("*", 5, {})
