@@ -40,7 +40,11 @@ $ cd SGX3-Hackathon-Project-2024
 ```
 $ python3 -m venv env && source env/bin/activate
 ```
-5. Navigate further into the repo.
+4. Install the requirements
+```
+pip install -r requirements.txt
+```
+6. Navigate further into the repo.
 ```
 $ cd hpced
 ```
