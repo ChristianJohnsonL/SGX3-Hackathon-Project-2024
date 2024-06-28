@@ -29,6 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SOCIALACCOUNT_STORE_TOKENS = True
 
 # Application definition
 
@@ -61,6 +62,8 @@ AUTHENTICATION_BACKENDS = [
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
+AUTH_USER_MODEL = 'hpced.CustomUser'
+
 SOCIALACCOUNT_PROVIDERS = {
     # 'google': {
     #     # For each OAuth based provider, either add a ``SocialApp``
@@ -83,8 +86,13 @@ SOCIALACCOUNT_PROVIDERS = {
             'profile',
             'email',
             'offline_access',
-            'urn:globus:auth:scope:transfer.api.globus.org:all'
+            'urn:globus:auth:scope:transfer.api.globus.org:all',
+            'urn:globus:auth:scope:search.api.globus.org:all'
         ],
+        'AUTH_PARAMS': {
+            'access_type': 'offline',
+        }
+        
     }
 }
 MIDDLEWARE = [
@@ -171,3 +179,28 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+# import logging
+
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         'console': {
+#             'level': 'DEBUG',
+#             'class': 'logging.StreamHandler',
+#         },
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['console'],
+#             'level': 'DEBUG',
+#         },
+#         'allauth': {
+#             'handlers': ['console'],
+#             'level': 'DEBUG',
+#         },
+#     },
+# }
