@@ -142,3 +142,6 @@ def search_form_view(request):
     else:
         form = SearchForm()
     return render(request, "hpced/search.html", {"form": form, "result_list": results})
+
+def main(request):
+        return render(request, 'base.html')

@@ -37,5 +37,6 @@ urlpatterns = [
     path('accounts/globus/login/callback/', view.globus_callback),
     path('accounts/globus/login/', view.globus_login),
     path('accounts/', include('allauth.urls')),
+    path('',view.main)
 
 ]
