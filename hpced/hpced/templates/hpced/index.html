@@ -14,5 +14,14 @@
 {% if user.is_authenticated %}
 <a href="{% url 'metadata_form' %}">Add Metadata</a>
 <br><a href="{% url 'search_form' %}">Search for Training Resources</a>
+
+<div class="container">
+    <h1>HPC-ED Tool</h1>
+    <p>Our Targeted Science Gateway is the HPC-ED Gateway. HPC-ED (High-Performance Computing - Education) is a project to create and share metadata for HPC educational materials, making it easier to discover, access, and publish these resources through a federated catalog system.</p>
+    <p>Many institutions don't have an easy way to categorize or present their training resources. Currently, HPC-ED utilizes a command-line interface (CLI) to add training material to and query data from a database which is not at all user friendly or intuitive. Many people don't know how to use a CLI, so they don't get the opportunity to use the institution's training resources.</p>
+</div>
 {% endif %}
 {% endblock %}
+
+
+<body

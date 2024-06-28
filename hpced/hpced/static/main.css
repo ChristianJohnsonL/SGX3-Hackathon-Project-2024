@@ -1,0 +1,110 @@
+.top-bar
+{
+    background-color: rgb(12,7,23);
+    /* height: 189px; */
+}
+
+.logo
+{
+    position: absolute;
+    left: 175px;
+    top: -10px;
+}
+
+.auth-links
+{
+
+    position: absolute;
+    right: 300px;
+    top: 50px;
+
+}
+
+
+.container 
+{
+    color: rgb(255, 255, 255);
+    font-family: 'Ubuntu';
+    text-align: center;
+    position: absolute;
+    top: 200px; /* Adjust this value to move the container lower */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%; /* Adjust the percentage if needed */
+    max-width: 800px; /* Set a max-width to confine the text */
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1
+{
+color: rgb(255,255,255);
+border: none;
+font-size: 50px;
+}
+
+
+/* Search button */
+button
+{
+    background-color: rgb(213,53,64);
+}
+
+/* Collapsible button */
+.collapsible {
+    background-color: rgba(119, 119, 119, 100);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    margin-top: 10px;
+  }
+
+  /* Collapsible button content */
+  .content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    color: white;
+  }    
+
+  /* Collapsible button table  */
+  table
+  {
+    background-color: rgb(12,7,23);
+
+  }
+
+  tr
+  {
+    background-color: rgb(12,7,23);
+  }
+
+  td
+  {
+    background-color: rgb(12,7,23);
+  }
+
+input
+{
+background-color: white;  
+}
+
+label
+{
+  color: white;
+}
+
+
+input[type="checkbox"] 
+{
+  accent-color: red;
+}
+
+
+

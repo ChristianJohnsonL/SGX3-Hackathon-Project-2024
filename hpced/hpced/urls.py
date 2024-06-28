@@ -33,5 +33,6 @@ urlpatterns = [
     path('metadata/', view.metadata_form_view, name='metadata_form'),
     path('search/', view.search_form_view, name='search_form'),
     path('accounts/', include('allauth.urls')),
+    path('',view.main)
 
 ]
